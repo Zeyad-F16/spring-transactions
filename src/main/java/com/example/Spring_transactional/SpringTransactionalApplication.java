@@ -17,8 +17,8 @@ public class SpringTransactionalApplication {
 	@Bean
 	public ApplicationRunner runner(TaskService taskService, ServiceHelper serviceHelper){
 		return args -> {
-			//taskService.saveTask("Task 1");
-			serviceHelper.m1();
+			taskService.saveTask("Task 1");
+			//serviceHelper.m1();
 		};
 	}
 
