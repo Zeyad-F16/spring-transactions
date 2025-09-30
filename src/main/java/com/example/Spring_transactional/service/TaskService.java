@@ -14,12 +14,17 @@ public class TaskService {
     @Autowired
     private  TaskRepository taskRepository;
 
+    @Autowired
+    private ServiceHelper serviceHelper;
+
     @Transactional
     public void saveTask(String title){
         TransactionalTask task = new TransactionalTask();
         task.setTitle(title);
 
         taskRepository.save(task);
+
+        serviceHelper.m1();
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.Spring_transactional;
 
+import com.example.Spring_transactional.service.ServiceHelper;
 import com.example.Spring_transactional.service.TaskService;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,9 +15,10 @@ public class SpringTransactionalApplication {
 	}
 
 	@Bean
-	public ApplicationRunner runner(TaskService taskService){
+	public ApplicationRunner runner(TaskService taskService, ServiceHelper serviceHelper){
 		return args -> {
-			taskService.saveTask("Task 1");
+			//taskService.saveTask("Task 1");
+			serviceHelper.m1();
 		};
 	}
 
