@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Propagation;
 @Service
 public class ServiceHelper {
 
-    @Transactional(propagation = Propagation.SUPPORTS)
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public void m1(){
         System.out.println("m1");
     }
